@@ -1,0 +1,103 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Dashboard
+      <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-4 form-group">
+        <input type="text"
+               class="form-control"
+               [minDate]="minDate"
+               [maxDate]="maxDate"
+               #dp="bsDatepicker"
+               bsDatepicker [(bsValue)]="bsValue">
+      </div>
+      <div class="col-xs-12 col-12 col-md-3 form-group">
+        <button class="btn btn-success" (click)="dp.toggle()">Date Picker</button>
+      </div>
+    </div>
+    <br>
+     
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-4 form-group">
+        <input class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue">
+      </div>
+      <div class="col-xs-12 col-12 col-md-3 form-group">
+        <button class="btn btn-success" (click)="drp.toggle()">Date Range Picker</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-4 col-lg-4 form-group">
+        <select
+          class="custom-select form-control"
+          [(ngModel)]="colorTheme" (ngModelChange)="applyTheme(dp);">
+          <option value="theme-default">default</option>
+          <option value="theme-green">green</option>
+          <option value="theme-blue">blue</option>
+          <option value="theme-dark-blue">dark-blue</option>
+          <option value="theme-red">red</option>
+          <option value="theme-orange">orange</option>
+        </select>
+      </div>
+     
+      <div class="col-xs-12 col-12 col-md-5 col-lg-5 form-group">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" bsDatepicker #dp="bsDatepicker" [bsConfig]="bsConfig">
+            <div class="input-group-btn">
+              <button class="btn btn-success" (click)="dp.show() ">Open</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-4 col-4 col-md-3 col-lg-2 form-group">
+        <select
+          class="custom-select form-control "
+          [(ngModel)]="locale" (ngModelChange)="applyLocale(dp);">
+          <option *ngFor="let loc of locales" [value]="loc">{{ loc }}</option>
+        </select>
+      </div>
+      <div class="col-xs-6 col-6 col-md-4 col-lg-3 form-group">
+        <input placeholder="Datepicker" type="text" class="form-control" bsDatepicker #dp="bsDatepicker">
+      </div>
+      <div class="col-xs-12 col-12 col-md-4 col-lg-4 form-group">
+        <input type="button"
+               class="btn btn-success"
+               value="Date Picker"
+               (click)="dp.show()" />
+      </div>
+    </div>
+    <br>
+     
+    <div class="row">
+      <div class="col-xs-4 col-4 col-md-3 col-lg-2 form-group">
+        <select
+          class="custom-select form-control "
+          [(ngModel)]="locale" (ngModelChange)="applyLocale(dpr);">
+          <option *ngFor="let loc of locales" [value]="loc">{{ loc }}</option>
+        </select>
+      </div>
+      <div class="col-xs-6 col-6 col-md-4 col-lg-3 form-group">
+        <input placeholder="Daterangepicker" type="text" class="form-control" bsDaterangepicker #dpr="bsDaterangepicker">
+      </div>
+      <div class="col-xs-12 col-12 col-md-4 col-lg-4 form-group">
+        <input type="button"
+               class="btn btn-success"
+               value="Date Range Picker" (click)="dpr.show()"/>
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+</div>

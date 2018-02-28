@@ -1,0 +1,62 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+  <h1>
+    Dashboard
+    <small>Version 2.0</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="#">Dashboard</li>
+    <li class="active">Cidades</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <p-dataGrid [value]="citys" [paginator]="true" [rows]="20">
+    <p-header>
+        Lista de Cidades
+    </p-header>
+    <ng-template let-city pTemplate="item">
+        <div style="padding:3px" class="ui-g-12 ui-md-3">
+            <p-panel [header]="city.title" [style]="{'text-align':'center'}">
+                <img src="./assets/{{city.cover}}" width="60">
+                <div class="car-detail">{{city.uf}} - {{city.cep}}</div>
+                <hr class="ui-widget-content" style="border-top:0">
+                <p-button type="button" (click)="selectCity(city)" icon="fa fa-fw fa fa-search" label="Ver" styleClass="ui-button-primary"></p-button>
+                <a pButton [routerLink]="['/admin/operacional/cidades',city.id,'edit']" icon="fa fa-fw fa-pencil"  label="Editar" class="ui-button-success"></a>
+                <p-button type="button" (click)="delete(city.id)" icon="fa fa-fw fa-trash" label="Delete" styleClass="ui-button-danger"></p-button>
+            </p-panel>
+        </div>
+        
+    </ng-template>
+</p-dataGrid>
+
+<p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="400" (onAfterHide)="onDialogHide()">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedCity" style="font-size:16px;text-align:center;padding:20px">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-12" style="text-align:center"><img src="./assets/{{selectedCity.cover}}"  width="100"></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">Nome\Descrição: </div>
+            <div class="ui-grid-col-8">{{selectedCity.title}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">Estado(UF): </div>
+            <div class="ui-grid-col-8">{{selectedCity.uf}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">Cep: </div>
+            <div class="ui-grid-col-8">{{selectedCity.cep}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">Ibge: </div>
+            <div class="ui-grid-col-8">{{selectedCity.ibge}}</div>
+        </div>
+    </div>
+</p-dialog>
+  <!-- /.row -->
+</section>
+<!-- /.content -->
+</div>

@@ -1,0 +1,38 @@
+<form  #frm="ngForm" (ngSubmit)="register(frm)" method="post">
+        <div #first_name class="form-group has-feedback">
+          <input type="text" name="first_name" (change)="limpa(first_name)" class="form-control" placeholder="Primeiro Nme" ngModel>
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          <span class="help-block">{{ inputFilter.first_name }}</span>
+        </div>
+        <div #last_name  class="form-group has-feedback">
+          <input type="text" (change)="limpa(last_name)" name="last_name" class="form-control" placeholder="Sobre Nome" ngModel>
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          <span class="help-block">{{ inputFilter.last_name }}</span>
+        </div>
+        <div #email class="form-group has-feedback">
+          <input type="email" (change)="limpa(email)" name="email" class="form-control" placeholder="E-mail" ngModel>
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          <span class="help-block">{{ inputFilter.email }}</span>
+        </div>
+        <div #password class="form-group has-feedback">
+          <input type="password" (change)="limpa(password)" name="password" class="form-control" placeholder="Senha" ngModel>
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <span class="help-block">{{ inputFilter.password }}</span>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" name="repet_password" class="form-control" placeholder="Repita a senha" ngModel>
+          <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+          <span class="help-block">{{ inputFilter.repet_password }}</span>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-xs-4 col-xs-offset-8">
+            <button type="submit" class="btn btn-primary btn-block btn-flat" [disabled]="disabled">Cadastre-se</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <a routerLink="">Pagina Inicial</a><br>
+      <a routerLink="/auth" class="text-center">Ja sou cadastrado</a>
+  

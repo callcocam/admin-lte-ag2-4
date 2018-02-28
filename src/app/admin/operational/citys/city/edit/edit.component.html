@@ -1,0 +1,50 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+  <h1>
+    Dashboard
+    <small>Version 2.0</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="#">Dashboard</li>
+    <li class="active">Cidades</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Input Addon</h3>
+            </div>
+            <div class="box-body">
+                <form class="form-horizontal" (submit)="save()">
+              <div class="ui-g-6 ui-fluid">
+                  <label>Title</label>
+                  <input pInputText type="text" class="form-control" placeholder="Titulo" id="title" name="title" [(ngModel)] = "city.title">
+              </div>
+
+              <div class="ui-g-3 ui-fluid">
+                  <label>Cep</label>
+                  <p-inputMask mask="99999-999" styleClass="form-control" placeholder="00000-000" name="cep"  [(ngModel)] = "city.cep"></p-inputMask>
+              </div>
+              <div class="ui-g-3 ui-fluid">
+                  <label>Uf</label>
+                  <input pInputText type="text" class="form-control" placeholder="Uf" name="uf" [(ngModel)] = "city.uf">
+              </div>
+
+              <div class="ui-g-3 ui-fluid">
+                  <label>Pais</label>
+                  <input pInputText type="text" class="form-control" placeholder="Nome do Pais" name="xpais" [(ngModel)] = "city.xpais">
+              </div>
+              </form>
+             
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+  <!-- /.row -->
+</section>
+<!-- /.content -->
+</div>

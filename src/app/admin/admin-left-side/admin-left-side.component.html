@@ -1,0 +1,55 @@
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="assets/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>{{ userLogado.first_name }} {{ userLogado.last_name }}</p>
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+      <li class="header">MAIN NAVIGATION</li>
+       <li routerLinkActive="active">
+        <a routerLink="/admin">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+      </li>     
+      <li class="treeview">
+        <a routerLinkActive="active" href="#">
+            <i class="fa fa-gears"></i>
+            <span>Operacional</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+          </a>
+        <ul class="treeview-menu">
+          <li routerLinkActive="active"><a  routerLink="/admin/operacional/cidades"><i class="fa fa-angle-left pull-right"></i> Cidades</a></li>
+         </ul>
+      </li>
+      <li class="treeview">
+        <a routerLinkActive="active" href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Controle De Estoque</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+          </a>
+        <ul class="treeview-menu">
+          <li routerLinkActive="active"><a  routerLink="/admin/controle-de-estoque/categories"><i class="fa fa-angle-left pull-right"></i> Categorias</a></li>
+          <li routerLinkActive="active"><a  routerLink="/admin/controle-de-estoque/brands"><i class="fa fa-angle-left pull-right"></i> Marcas</a></li>
+          <li routerLinkActive="active"><a  routerLink="/admin/controle-de-estoque/products"><i class="fa fa-angle-left pull-right"></i> Produtos</a></li>
+         </ul>
+      </li>
+      <li class="header">Informações</li>
+      <li><a ><i class="fa fa-eye"></i> <span>Ver Site</span></a></li>
+      <li><a routerLink="logout"><i class="fa fa-sign-out"></i> <span>Sair Do Sistema</span></a></li>
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
