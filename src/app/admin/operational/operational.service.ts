@@ -36,7 +36,6 @@ export class OperationalService {
   }
 
   delete(id:number): Observable<any>{
-    console.log(`${this.localStorage.BASE_URL}admin/${this.pathUrl}/${id}`)
     return this.http.delete(`${this.localStorage.BASE_URL}admin/${this.pathUrl}/${id}`,this.requestOptions.merge())
   }
 

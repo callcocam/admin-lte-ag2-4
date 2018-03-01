@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     $(t).removeClass('has-error').addClass('has-success')
   }
   register (frm: FormControl){
-   // this.disabled = true
+   this.disabled = true
     
     this.registerService.register(frm).subscribe((response) => {      
       if(response.result.zf_validate){
